@@ -1,1 +1,4 @@
-CREATE TABLE IF NOT EXISTS "stedet det skal ligges, måske?"
+
+CREATE DATABASE IF NOT EXISTS navn
+
+CREATE TABLE IF NOT EXISTS navn.navnPåTable
