@@ -1,3 +1,9 @@
+
+http://www.csvreader.com/java_csv_samples.php
+
+
+
+
 package data;
 
 import java.io.File;
@@ -27,45 +33,50 @@ public class CSV {
 	
 	public void lavCSVfil(ArrayList<String> resultatListe){		
 	
+		String outputFile = "C:\\opt\\test.csv";
+		
+		
+		boolean alreadyExists = new File(outputFile).exists();
+		
 		try {
 			
-			FileWriter writer = new FileWriter("C:\\opt\\test.csv");
+//			CsvWriter writer = new CsvWriter(new FileWriter(outputFile,true),',');
+			FileWriter writer = new FileWriter(outputFile,true);
 			
-			for (int j = 0; j < 2 ; j++) { // resultatListe.size() - laver alt for mange
+			if(!alreadyExists){
+				
+				writer.g
 				
 				writer.write("Bestil ID");
 				writer.write(";");
-				writer.write("Start Vej og nr");
+				writer.write("Start vej og nr");
 				writer.write(";");
-				writer.write("Start By");
+				writer.write("1");
 				writer.write(";");
-				writer.write("Start Postnr.");
+				writer.write("Bestil ID2");
 				writer.write(";");
-				writer.write("Start Kommune");
+				writer.write("Bestil ID3");
 				writer.write(";");
-				writer.write("Slut Vej og nr.");
+				writer.write("Bestil ID4");
 				writer.write(";");
-				writer.write("Slut By");
+				writer.write("Bestil ID5");
 				writer.write(";");
-				writer.write("Slut Postnr.");
+				writer.write("Bestil ID6");
 				writer.write(";");
-				writer.write("Slut Kommune");
+				writer.write("Bestil ID7");
 				writer.write(";");
-			}
-			
-
-			writer.write('\n');
-			
+				writer.write('\n');
+				
 				for (int i = 0; i < resultatListe.size(); i++) {
-					
 					writer.append(resultatListe.get(i));
 					writer.write(";");
 				}
-
 				writer.write("\n");			
 
 				writer.close();
-			
+			}else{
+				writer.write("hejsa");
+			}
 
 			
 		} catch (IOException e) {
