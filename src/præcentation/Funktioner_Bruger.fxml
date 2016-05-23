@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="671.0" prefWidth="441.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="præcentation.Funktioner_BrugerController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="105.0" stroke="BLACK" strokeType="INSIDE" width="441.0" />
+      <Text layoutX="91.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Du er logget ind som" wrappingWidth="283.18359375">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="309.0" layoutX="15.0" layoutY="116.0" stroke="BLACK" strokeType="INSIDE" width="412.0" />
+      <Text layoutX="84.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Text layoutX="318.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tid">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <DatePicker layoutX="24.0" layoutY="152.0" prefHeight="31.0" prefWidth="154.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="224.0" layoutX="15.0" layoutY="435.0" stroke="BLACK" strokeType="INSIDE" width="412.0" />
+      <Button layoutX="280.0" layoutY="609.0" mnemonicParsing="false" onAction="#haandterBestilKnap" prefHeight="31.0" prefWidth="76.0" text="Bestil" />
+      <TextField layoutX="345.0" layoutY="163.0" prefHeight="31.0" prefWidth="59.0" promptText="00:00" />
+      <TextField layoutX="23.0" layoutY="239.0" promptText="Vej og nr." />
+      <TextField layoutX="23.0" layoutY="276.0" promptText="By" />
+      <TextField layoutX="23.0" layoutY="313.0" promptText="Postnr." />
+      <Text layoutX="42.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start adresse" wrappingWidth="150.0">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Text layoutX="243.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Slut adresse" wrappingWidth="150.0">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <RadioButton layoutX="253.0" layoutY="157.0" mnemonicParsing="false" selected="true" text="Afgang" />
+      <RadioButton layoutX="253.0" layoutY="180.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="86.0" text="Ankomst" />
+      <TextField layoutX="225.0" layoutY="313.0" promptText="Postnr." />
+      <TextField layoutX="225.0" layoutY="276.0" promptText="By" />
+      <TextField layoutX="225.0" layoutY="239.0" promptText="Vej og nr." />
+      <Text layoutX="43.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Antal personer">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Text layoutX="243.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hjælpemidler">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <TextArea layoutX="225.0" layoutY="475.0" prefHeight="89.0" prefWidth="187.0" promptText="Kommentar" />
+      <Text layoutX="48.0" layoutY="603.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beregnet pris">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <TextField editable="false" layoutX="26.0" layoutY="609.0" prefHeight="31.0" prefWidth="187.0" />
+      <SplitMenuButton layoutX="22.0" layoutY="352.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="187.0" text="Kommune">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </SplitMenuButton>
+      <SplitMenuButton layoutX="225.0" layoutY="352.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="187.0" text="Kommune">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Action 1" />
+            <MenuItem mnemonicParsing="false" text="Action 2" />
+         </items>
+      </SplitMenuButton>
+      <Label layoutX="95.0" layoutY="59.0" text="NAVN" />
+      <Label layoutX="262.0" layoutY="59.0" text="KUNDENR" />
+      <TextField layoutX="22.0" layoutY="475.0" onAction="#haandterPersonMenu" promptText="Antal personer" />
+   </children>
+</AnchorPane>

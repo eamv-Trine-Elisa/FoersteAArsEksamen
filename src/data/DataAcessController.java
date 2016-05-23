@@ -9,7 +9,7 @@ public class DataAcessController {
 
 	public static void main(String[] args) {
 
-		findAlleBestillingerOgExporterCSV(2);
+		findAlleBestillingerOgExporterCSV(1);
 
 	}
 
