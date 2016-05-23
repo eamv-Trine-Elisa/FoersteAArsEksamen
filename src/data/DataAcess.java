@@ -9,9 +9,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class DataAcess {
-	private ArrayList<String> resultater = new ArrayList<>();
-	private ArrayList<String> kundeBestillinger = new ArrayList<>();
-
 
 	private ResultSet resultset = null;
 	private Connection con;
