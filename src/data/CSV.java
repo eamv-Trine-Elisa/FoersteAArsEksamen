@@ -51,6 +51,7 @@ public class CSV {
 				writer.write(";");
 				writer.write("Slut Kommune");
 				writer.write(";");
+
 			}
 			
 

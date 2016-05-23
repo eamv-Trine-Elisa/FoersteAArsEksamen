@@ -9,13 +9,14 @@ public class DataAcessController {
 
 	public static void main(String[] args) {
 
-		findAlleBestillingerOgExporterCSV(4);
+		findAlleBestillingerOgExporterCSV(2);
+
 	}
 
 	public static void findAlleBestillingerOgExporterCSV(int kundenr) {
 		ArrayList<String> overføre = new ArrayList<>();
 
-		int bestilID = 3;
+		int bestilID = 0;
 
 
 		FindBestilIDFraKundenr fbIDfk = new FindBestilIDFraKundenr();
