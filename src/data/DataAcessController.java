@@ -9,7 +9,9 @@ public class DataAcessController {
 
 	public static void main(String[] args) {
 
-		findAlleBestillingerOgExporterCSV(1);
+		bestillingTest();
+		findAlleBestillingerOgExporterCSV(3);
+		
 
 	}
 
@@ -33,5 +35,26 @@ public class DataAcessController {
 		}
 
 	}
+	
+//	public static void bestillingTest(){
+//		DataAcess da = DataAcess.getInstance();
+////		da.indsætIBestilling(3);
+//		da.indsætIBestilling_adresse(6, "start vej og nr", "Start by", "start postnr", "startKommune", 
+//				"slutVejOgNr", "slutBy", "slutPostnr", "slutKommune");
+//		da.indsætIBestilling_PHB(6, "antalPersoner", "hjælpemidler", "beregnetPris");
+//		da.indsætIBestilling_Tid(6, "dato", "måned", "afgang_ankomst", "klokkeslæt");
+//		
+//	}
+	
+	
+	public static void bestillingTest(){
+		BestilKørsel bk = new BestilKørsel();
+		
+		bk.bestilKørsel("antalPersoner", "startVejOgNr", "startBy", "startPostnr", "startKommune", "slutVejOgNr", "slutBy",
+				"slutPostnr", "slutKommune", "dato", "måned", "klokkeslæt", "afgang_ankomst", "hjælpemidler", "beregnetPris", 3);
+	}
+	
+	
+	
 
 }

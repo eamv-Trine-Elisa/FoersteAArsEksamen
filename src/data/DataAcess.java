@@ -12,8 +12,8 @@ public class DataAcess {
 
 	private ResultSet resultset = null;
 	private Connection con;
-	String url = "jdbc:sqlserver://localhost:1433;instanceName=SQLExpress;databaseName=MFTS;integratedSecurity=true;";
-	boolean korrektIndsat = false;
+	private String url = "jdbc:sqlserver://localhost:1433;instanceName=SQLExpress;databaseName=MFTS;integratedSecurity=true;";
+	private boolean korrektIndsat = false;
 	
 	// Creating a singleton class.
 	private static DataAcess instance = null;
@@ -87,7 +87,7 @@ public class DataAcess {
 			con = DriverManager.getConnection(url);
 			Statement statement = con.createStatement();
 			statement.executeUpdate("INSERT INTO Bestilling_Adresse VALUES ("+ bestilID +",'"+ startVejOgNr +"',' "+ startBy +"','"+ startPostnr +"','"+ startKommune +"',"
-					+ "' "+ slutVejOgNr +"',' "+ slutBy +"',' "+ slutPostnr +"',' "+ slutKommune +")");
+					+ "' "+ slutVejOgNr +"',' "+ slutBy +"',' "+ slutPostnr +"',' "+ slutKommune +"')");
 			
 			korrektIndsat = true;
 			
@@ -105,7 +105,7 @@ public class DataAcess {
 		try {
 			con = DriverManager.getConnection(url);
 			Statement statement = con.createStatement();
-			statement.executeUpdate("INSERT INTO Bestilling_PHB VALUES ("+ bestilID +",'"+ antalPersoner +"','"+ hjælpemidler +"','"+ beregnetPris +")");
+			statement.executeUpdate("INSERT INTO Bestilling_PHB VALUES ("+ bestilID +",'"+ antalPersoner +"','"+ hjælpemidler +"','"+ beregnetPris +"')");
 			
 			korrektIndsat = true;
 			
