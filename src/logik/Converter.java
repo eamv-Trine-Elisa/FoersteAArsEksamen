@@ -2,34 +2,29 @@ package logik;
 
 public class Converter {
 
-	
 	public int antalPersonerStringToInt(String antalPersoner) {
-		return 0;
-		
+		return Integer.parseInt(antalPersoner);
+
 	}
-	
-	
+
 	public int datoStringToInt(String dato) {
-		return 0;
-		
+		return Integer.parseInt(dato);
+
 	}
-	
-	
+
 	public int månedStringToInt(String måned) {
-		return 0;
-		
+		return Integer.parseInt(måned);
+
 	}
 
-	
 	public String beregnetPrisDoubleToString(double beregnetPris) {
-		return null;
-		
+		return String.valueOf(beregnetPris);
+
 	}
 
-	
 	public int kundenrStringToInt(String kundenr) {
-		return 0;
-		
+		return Integer.parseInt(kundenr);
+
 	}
-	
+
 }

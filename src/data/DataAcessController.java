@@ -1,60 +1,27 @@
 package data;
 
-import java.util.ArrayList;
-
-import logik.FindBestilIDFraKundenr;
-import logik.FindOplysningerFraBestilID;
-
 public class DataAcessController {
 
-	public static void main(String[] args) {
+	public void lavCSVfil(int kundenr) {
 
-//		bestillingTest();
-		findAlleBestillingerOgExporterCSV(3);
-		
-
+		HåndteringAFSamleTilCSV hastCSV = new HåndteringAFSamleTilCSV();
+		hastCSV.findAlleBestillingerOgExporterCSV(kundenr);
 	}
 
-	public static void findAlleBestillingerOgExporterCSV(int kundenr) {
-		ArrayList<String> overføre = new ArrayList<>();
+	
+	public boolean bestillingAfKørsel(String antalPersoner, String startVejOgNr, String startBy, String startPostnr,
+			String startKommune, String slutVejOgNr, String slutBy, String slutPostnr, String slutKommune, String dato,
+			String måned, String klokkeslæt, String afgang_ankomst, String hjælpemidler, String beregnetPris,
+			int kundenr) {
 
-		int bestilID = 0;
+		boolean kørselBestilt = false;
 
+		BestilKørsel bestilKørsel = new BestilKørsel();
 
-		FindBestilIDFraKundenr fbIDfk = new FindBestilIDFraKundenr();
-		FindOplysningerFraBestilID fofb = new FindOplysningerFraBestilID();
-		CSV csv = CSV.getInstance();
+		kørselBestilt = bestilKørsel.bestilKørsel(antalPersoner, startVejOgNr, startBy, startPostnr, startKommune,
+				slutVejOgNr, slutBy, slutPostnr, slutKommune, dato, måned, klokkeslæt, afgang_ankomst, hjælpemidler,
+				beregnetPris, kundenr);
 
-		overføre.addAll(fbIDfk.findeBestilIDfraKundenr(kundenr));
-
-		for (int i = 0; i < overføre.size(); i++) {
-
-			bestilID = Integer.parseInt(fbIDfk.findeBestilIDfraKundenr(kundenr).get(i));
-
-			csv.lavCSVfil(fofb.bestillingAdresseOplysninger(bestilID));
-		}
-
+		return kørselBestilt;
 	}
-	
-//	public static void bestillingTest(){
-//		DataAcess da = DataAcess.getInstance();
-////		da.indsætIBestilling(3);
-//		da.indsætIBestilling_adresse(6, "start vej og nr", "Start by", "start postnr", "startKommune", 
-//				"slutVejOgNr", "slutBy", "slutPostnr", "slutKommune");
-//		da.indsætIBestilling_PHB(6, "antalPersoner", "hjælpemidler", "beregnetPris");
-//		da.indsætIBestilling_Tid(6, "dato", "måned", "afgang_ankomst", "klokkeslæt");
-//		
-//	}
-//	
-//	
-//	public static void bestillingTest(){
-//		BestilKørsel bk = new BestilKørsel();
-//		
-//		bk.bestilKørsel("antalPersoner", "startVejOgNr", "startBy", "startPostnr", "startKommune", "slutVejOgNr", "slutBy",
-//				"slutPostnr", "slutKommune", "dato", "måned", "klokkeslæt", "afgang_ankomst", "hjælpemidler", "beregnetPris", 3);
-//	}
-//	
-//	
-	
-
 }
