@@ -3,13 +3,13 @@ package data;
 import java.util.ArrayList;
 
 import logik.FindBestilIDFraKundenr;
-import logik.FindOplysningerFraBestilnr;
+import logik.FindOplysningerFraBestilID;
 
 public class DataAcessController {
 
 	public static void main(String[] args) {
 
-		bestillingTest();
+//		bestillingTest();
 		findAlleBestillingerOgExporterCSV(3);
 		
 
@@ -22,7 +22,7 @@ public class DataAcessController {
 
 
 		FindBestilIDFraKundenr fbIDfk = new FindBestilIDFraKundenr();
-		FindOplysningerFraBestilnr fofb = new FindOplysningerFraBestilnr();
+		FindOplysningerFraBestilID fofb = new FindOplysningerFraBestilID();
 		CSV csv = CSV.getInstance();
 
 		overføre.addAll(fbIDfk.findeBestilIDfraKundenr(kundenr));
@@ -45,16 +45,16 @@ public class DataAcessController {
 //		da.indsætIBestilling_Tid(6, "dato", "måned", "afgang_ankomst", "klokkeslæt");
 //		
 //	}
-	
-	
-	public static void bestillingTest(){
-		BestilKørsel bk = new BestilKørsel();
-		
-		bk.bestilKørsel("antalPersoner", "startVejOgNr", "startBy", "startPostnr", "startKommune", "slutVejOgNr", "slutBy",
-				"slutPostnr", "slutKommune", "dato", "måned", "klokkeslæt", "afgang_ankomst", "hjælpemidler", "beregnetPris", 3);
-	}
-	
-	
+//	
+//	
+//	public static void bestillingTest(){
+//		BestilKørsel bk = new BestilKørsel();
+//		
+//		bk.bestilKørsel("antalPersoner", "startVejOgNr", "startBy", "startPostnr", "startKommune", "slutVejOgNr", "slutBy",
+//				"slutPostnr", "slutKommune", "dato", "måned", "klokkeslæt", "afgang_ankomst", "hjælpemidler", "beregnetPris", 3);
+//	}
+//	
+//	
 	
 
 }

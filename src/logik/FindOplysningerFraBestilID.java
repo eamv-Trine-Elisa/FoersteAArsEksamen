@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import data.DataAcess;
 
-public class FindOplysningerFraBestilnr {
+public class FindOplysningerFraBestilID {
 
 	private ArrayList<String> resultater = new ArrayList<>();
 	private ResultSet resultset = null;
