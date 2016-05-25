@@ -18,6 +18,8 @@ public class Beregner {
 			String startKommune, String slutVejOgNr, String slutBy, String slutPostnr, String slutKommune, int dato,
 			int måned) {
 	
+		this.fraKommune = startKommune;
+		this.tilKommune = slutKommune;
 		this.month = måned;
 		this.day = dato;
 		this.antalPersoner = antalPersoner;
