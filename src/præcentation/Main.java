@@ -23,7 +23,7 @@ public class Main extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Midttrafik flextur");
+		this.primaryStage.setTitle("Midttrafik Flextrafik");
 		
 		sceneLoader();
 		funktionerBrugerLoader();
