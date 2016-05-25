@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class FindBestilIDFraKundenr {
 
-	private ArrayList<String> bestillingsNr = new ArrayList<>();
+	private ArrayList<String> bestillingsID = new ArrayList<>();
 	private ResultSet resultset = null;
 
 	
@@ -24,7 +24,7 @@ public class FindBestilIDFraKundenr {
 				
 				int j = 1;
 				while (j <= numberOfColumns) {
-					bestillingsNr.add(resultset.getString(j));
+					bestillingsID.add(resultset.getString(j));
 					System.out.println(resultset.getString(j));
 
 					j++;
@@ -35,7 +35,7 @@ public class FindBestilIDFraKundenr {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return bestillingsNr;
+		return bestillingsID;
 	}
 
 }

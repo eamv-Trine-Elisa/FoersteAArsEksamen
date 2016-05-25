@@ -3,6 +3,7 @@ package data;
 import java.util.ArrayList;
 
 public class HåndteringAFSamleTilCSV {
+	
 	public void findAlleBestillingerOgExporterCSV(int kundenr) {
 		ArrayList<String> overføre = new ArrayList<>();
 
