@@ -18,15 +18,14 @@
          </font>
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="309.0" layoutX="15.0" layoutY="116.0" stroke="BLACK" strokeType="INSIDE" width="412.0" />
-      <Text layoutX="84.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato">
+      <Text layoutX="87.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato">
          <font>
             <Font size="18.0" />
          </font></Text>
-      <Text layoutX="318.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tid">
+      <Text layoutX="318.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tid">
          <font>
             <Font size="18.0" />
          </font></Text>
-      <DatePicker layoutX="24.0" layoutY="152.0" prefHeight="31.0" prefWidth="154.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="224.0" layoutX="15.0" layoutY="435.0" stroke="BLACK" strokeType="INSIDE" width="412.0" />
       <Button layoutX="280.0" layoutY="609.0" mnemonicParsing="false" onAction="#haandterBestilKnap" prefHeight="31.0" prefWidth="76.0" text="Bestil" />
       <TextField layoutX="345.0" layoutY="163.0" prefHeight="31.0" prefWidth="59.0" promptText="00:00" />
@@ -75,5 +74,8 @@
       <Label layoutX="95.0" layoutY="59.0" text="NAVN" />
       <Label layoutX="262.0" layoutY="59.0" text="KUNDENR" />
       <TextField layoutX="22.0" layoutY="475.0" promptText="Antal personer" />
+      <TextField fx:id="denne" layoutX="22.0" layoutY="164.0" onAction="#dag" onMouseExited="#dag" prefHeight="31.0" prefWidth="86.0" promptText="dd" />
+      <TextField layoutX="124.0" layoutY="164.0" prefHeight="31.0" prefWidth="86.0" promptText="mm" />
+      <ChoiceBox fx:id="countChoiceBox" layoutX="41.0" layoutY="394.0" onMouseClicked="#startKommune" prefWidth="150.0" />
    </children>
 </AnchorPane>
