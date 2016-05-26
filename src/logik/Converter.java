@@ -1,5 +1,7 @@
 package logik;
 
+import java.text.DecimalFormat;
+
 public class Converter {
 
 	public int antalPersonerStringToInt(String antalPersoner) {
@@ -15,7 +17,12 @@ public class Converter {
 	}
 
 	public String beregnetPrisDoubleToString(double beregnetPris) {
-		return String.valueOf(beregnetPris);
+		String.valueOf(beregnetPris);
+		
+		DecimalFormat afrunding = new DecimalFormat("#.##");
+		String afrundetPris = afrunding.format(beregnetPris);
+		
+		return afrundetPris;
 	}
 
 	public int kundenrStringToInt(String kundenr) {

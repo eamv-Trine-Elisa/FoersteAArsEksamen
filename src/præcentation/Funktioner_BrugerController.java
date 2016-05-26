@@ -22,11 +22,11 @@ import javafx.scene.shape.Rectangle;
 import logik.MFTScontroller;
 
 public class Funktioner_BrugerController implements Initializable {
-	
+
 	MFTScontroller mfts = new MFTScontroller();
-	
+
 	private boolean beskedIkkebesked = false;
-	
+
 	private String kundenummer;
 	private String datoDag;
 	private String datoMåned;
@@ -90,13 +90,12 @@ public class Funktioner_BrugerController implements Initializable {
 	private TextField beregnetPris;
 	@FXML
 	private Button bestil;
-	
+
 	@FXML
 	private MenuItem opretHistorik;
-	
+
 	@FXML
 	private Label bestilBesked;
-	
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -120,43 +119,45 @@ public class Funktioner_BrugerController implements Initializable {
 		this.personer = antalPersoner.getText();
 		this.hjælp = hjælpemidler.getText();
 		this.prisen = beregnetPris.getText();
-		
-		if(afgang.isSelected()){
+
+		if (afgang.isSelected()) {
 			this.afGang_anKomst = afgang.getText();
-			
-		}else{
+
+		} else {
 			this.afGang_anKomst = ankomst.getText();
 		}
 
-		
 		bestilling();
-	
-		if(beskedIkkebesked == true){
+
+		if (beskedIkkebesked == true) {
 			besked("Bestillling gennemført");
-		}else{
+		} else {
 			besked("Bestilling ikke gennemført");
-			
 		}
 		
+		findPris();
 	}
 
 	public void bestilling() {
-		
-		beskedIkkebesked = mfts.bestilKørsel(personer, startVej, startBY, startPostnummer, startKommuner, slutVej, slutBY,
-				slutPostnummer, slutKommuner, datoDag, datoMåned, klokkeslæt, afGang_anKomst, hjælp, prisen, kundenummer);
-
+		beskedIkkebesked = mfts.bestilKørsel(personer, startVej, startBY, startPostnummer, startKommuner, slutVej,
+				slutBY, slutPostnummer, slutKommuner, datoDag, datoMåned, klokkeslæt, afGang_anKomst, hjælp, prisen,
+				kundenummer);
 	}
-	
-	
-	public void lavHistorik(){
+
+	public void lavHistorik() {
 		mfts.lavCSVfil(kundenr.getText());
 		besked("CSV fil oprettet");
 	}
-	
-	
-	public void besked(String besked){
-		bestilBesked.setText(besked);
+
+	public void findPris() {
+		String pris = mfts.udfyldBestillingsblanket(personer, startVej, startBY, startPostnummer, startKommuner, slutVej, slutBY,
+				slutPostnummer, slutKommuner, datoDag, datoMåned);
 		
+		beregnetPris.setText(pris);
+	}
+
+	public void besked(String besked) {
+		bestilBesked.setText(besked);
 	}
 
 }

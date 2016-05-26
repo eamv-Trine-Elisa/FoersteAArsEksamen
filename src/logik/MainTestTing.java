@@ -13,7 +13,11 @@ public class MainTestTing {
 //				"Holstebro", "26", "5", "13:30", "afgang", "Kørestol", pris, "3");
 //		System.out.println(indsæt);
 		
-		mftsc.lavCSVfil("3");
+
+		Converter c = new Converter();
+		String f = c.beregnetPrisDoubleToString(58888.85697423);
+		
+		System.out.println(f);
 
 	}
 

@@ -1,5 +1,6 @@
 package logik;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.Random;
 
@@ -40,7 +41,6 @@ public class Beregner {
 		}else{
 			beregnetPris = pris + (kilometer * halvSats * (antalPersoner -1));
 		}
-
 		
 		return beregnetPris;
 	}
