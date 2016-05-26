@@ -10,5 +10,5 @@ public interface MFTScontroller_interface {
 			String slutBy, String slutPostnr, String slutKommune, String dato, String måned, String klokkeslæt, String afgang_ankomst, 
 			String hjælpemidler, String beregnetPris, String kundenr);
 	
-	public void lavCSVfil(int kundenr);
+	public void lavCSVfil(String kundenr);
 }

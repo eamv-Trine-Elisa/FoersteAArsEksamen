@@ -3,6 +3,7 @@ package præcentation;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import data.CSV;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -11,31 +12,57 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.shape.Rectangle;
+import logik.MFTScontroller;
 
-public class Funktioner_BrugerController implements Initializable{
-
+public class Funktioner_BrugerController implements Initializable {
+	
+	MFTScontroller mfts = new MFTScontroller();
+	
+	private boolean beskedIkkebesked = false;
+	
+	private String kundenummer;
+	private String datoDag;
+	private String datoMåned;
+	private String afGang_anKomst;
+	private String klokkeslæt;
+	private String startVej;
+	private String startBY;
+	private String startPostnummer;
+	private String startKommuner;
+	private String slutVej;
+	private String slutBY;
+	private String slutPostnummer;
+	private String slutKommuner;
+	private String personer;
+	private String hjælp;
+	private String prisen;
 
 	@FXML
 	private Label navn;
 	@FXML
-	private Label kundenr;
-	
+	private TextField kundenr;
+
 	@FXML
 	private TextField dagDato;
 	@FXML
 	private TextField månedDato;
-	
+
 	@FXML
 	private RadioButton afgang;
 	@FXML
 	private RadioButton ankomst;
 	@FXML
+	private ToggleGroup afgang_ankomst;
+	@FXML
 	private TextField tid;
-	
+
 	@FXML
 	private TextField startVejOgNr;
 	@FXML
@@ -44,7 +71,7 @@ public class Funktioner_BrugerController implements Initializable{
 	private TextField startPostnr;
 	@FXML
 	private SplitMenuButton startKommune;
-	
+
 	@FXML
 	private TextField slutVejOgNr;
 	@FXML
@@ -53,8 +80,7 @@ public class Funktioner_BrugerController implements Initializable{
 	private TextField slutPostnr;
 	@FXML
 	private SplitMenuButton slutKommune;
-	
-	
+
 	@FXML
 	private TextField antalPersoner;
 	@FXML
@@ -65,19 +91,71 @@ public class Funktioner_BrugerController implements Initializable{
 	@FXML
 	private Button bestil;
 	
+	@FXML
+	private MenuItem opretHistorik;
 	
+	@FXML
+	private Label bestilBesked;
+	
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-	
+
+	}
+
+	@FXML
+	public void håndterBestilKnap() {
+		this.kundenummer = kundenr.getText();
+		this.datoDag = dagDato.getText();
+		this.datoMåned = månedDato.getText();
+		this.klokkeslæt = tid.getText();
+		this.startVej = startVejOgNr.getText();
+		this.startBY = startBy.getText();
+		this.startPostnummer = startPostnr.getText();
+		this.startKommuner = startKommune.getText();
+		this.slutVej = slutVejOgNr.getText();
+		this.slutBY = slutBy.getText();
+		this.slutPostnummer = slutPostnr.getText();
+		this.slutKommuner = slutKommune.getText();
+		this.personer = antalPersoner.getText();
+		this.hjælp = hjælpemidler.getText();
+		this.prisen = beregnetPris.getText();
 		
+		if(afgang.isSelected()){
+			this.afGang_anKomst = afgang.getText();
+			
+		}else{
+			this.afGang_anKomst = ankomst.getText();
+		}
+
+		
+		bestilling();
+	
+		if(beskedIkkebesked == true){
+			besked("Bestillling gennemført");
+		}else{
+			besked("Bestilling ikke gennemført");
+			
+		}
 		
 	}
 
-
-	@FXML
-	public void håndterBestilKnap(){
+	public void bestilling() {
 		
-		kundenr.getText();
+		beskedIkkebesked = mfts.bestilKørsel(personer, startVej, startBY, startPostnummer, startKommuner, slutVej, slutBY,
+				slutPostnummer, slutKommuner, datoDag, datoMåned, klokkeslæt, afGang_anKomst, hjælp, prisen, kundenummer);
+
+	}
+	
+	
+	public void lavHistorik(){
+		mfts.lavCSVfil(kundenr.getText());
+		besked("CSV fil oprettet");
+	}
+	
+	
+	public void besked(String besked){
+		bestilBesked.setText(besked);
 		
 	}
 

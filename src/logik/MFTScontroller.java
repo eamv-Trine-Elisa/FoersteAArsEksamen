@@ -7,6 +7,7 @@ public class MFTScontroller implements MFTScontroller_interface {
 	private Converter converter = new Converter();
 	private DataAcessController dataController = new DataAcessController();
 
+
 	@Override
 	public String udfyldBestillingsblanket(String antalPersoner, String startVejOgNr, String startBy,
 			String startPostnr, String startKommune, String slutVejOgNr, String slutBy, String slutPostnr,
@@ -45,9 +46,11 @@ public class MFTScontroller implements MFTScontroller_interface {
 	}
 
 	@Override
-	public void lavCSVfil(int kundenr) {
+	public void lavCSVfil(String kundenr) {
 
-		dataController.lavCSVfil(kundenr);
+		int kundeNr = converter.kundenrStringToInt(kundenr);
+		
+		dataController.lavCSVfil(kundeNr);
 
 	}
 

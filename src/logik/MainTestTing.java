@@ -13,7 +13,7 @@ public class MainTestTing {
 //				"Holstebro", "26", "5", "13:30", "afgang", "Kørestol", pris, "3");
 //		System.out.println(indsæt);
 		
-		mftsc.lavCSVfil(3);
+		mftsc.lavCSVfil("3");
 
 	}
 
