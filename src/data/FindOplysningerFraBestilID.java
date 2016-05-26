@@ -23,8 +23,10 @@ public class FindOplysningerFraBestilID {
 
 				int i = 1;
 				while (i <= numberOfColumns) {
+
+					resultater.add(resultset.getString(i));
 					
-					resultater.add(resultset.getString(i++));
+				i++;
 				}
 			}
 

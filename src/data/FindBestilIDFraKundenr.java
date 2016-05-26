@@ -17,24 +17,31 @@ public class FindBestilIDFraKundenr {
 		resultset = da.findeBestilIDfraKundenr(kundenr);
 
 		try {
+			ResultSetMetaData metadata = resultset.getMetaData();
+			int numberOfColumns = metadata.getColumnCount();
+			
 			while (resultset.next()) {
-				ResultSetMetaData metadata = resultset.getMetaData();
-				int numberOfColumns = metadata.getColumnCount();
-
 				
 				int j = 1;
 				while (j <= numberOfColumns) {
-					bestillingsID.add(resultset.getString(j));
-					System.out.println(resultset.getString(j));
+					
+					if(!bestillingsID.contains(j)){
+						bestillingsID.add(resultset.getString(j));
 
+					}
+					
 					j++;
 				}
 			}
 
+
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		System.out.println(bestillingsID);
 		return bestillingsID;
 	}
 

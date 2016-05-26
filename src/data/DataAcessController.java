@@ -6,6 +6,8 @@ public class DataAcessController {
 
 		HåndteringAFSamleTilCSV hastCSV = new HåndteringAFSamleTilCSV();
 		hastCSV.findAlleBestillingerOgExporterCSV(kundenr);
+		
+
 	}
 
 	

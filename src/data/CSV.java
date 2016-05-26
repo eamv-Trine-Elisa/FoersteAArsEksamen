@@ -5,6 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.sound.midi.Synthesizer;
+
 public class CSV {
 	
 	
@@ -28,7 +30,7 @@ public class CSV {
 		try {
 			
 			FileWriter writer = new FileWriter("C:\\opt\\test.csv");
-			
+			System.out.println(resultatListe.size());
 			for (int j = 0; j < 2 ; j++) { // resultatListe.size() - laver alt for mange
 				
 				writer.write("Bestil ID");
@@ -49,14 +51,11 @@ public class CSV {
 				writer.write(";");
 				writer.write("Slut Kommune");
 				writer.write(";");
-
 			}
 			
-
 			writer.write('\n');
 			
 				for (int i = 0; i < resultatListe.size(); i++) {
-					
 					writer.append(resultatListe.get(i));
 					writer.write(";");
 				}
@@ -64,8 +63,6 @@ public class CSV {
 				writer.write("\n");			
 
 				writer.close();
-			
-
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
