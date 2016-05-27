@@ -156,7 +156,6 @@ public class Funktioner_BrugerController implements Initializable {
 		} else {
 			besked("Bestilling ikke gennemført");
 		}
-
 	}
 
 	public void bestilling() {
