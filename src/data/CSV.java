@@ -29,8 +29,8 @@ public class CSV {
 	
 		try {
 			
-			FileWriter writer = new FileWriter("C:\\opt\\test.csv");
-			System.out.println(resultatListe.size());
+			FileWriter writer = new FileWriter("C:\\temp\\Historik.csv");
+
 			for (int j = 0; j < 2 ; j++) { // resultatListe.size() - laver alt for mange
 		//Det er antallet af bestilID den skal lave den lang ting ting ting 
 				writer.write("Bestil ID");

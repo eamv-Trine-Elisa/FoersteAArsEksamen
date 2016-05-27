@@ -175,13 +175,13 @@ public class Funktioner_BrugerController implements Initializable {
 				slutVej, slutBY, slutPostnummer, slutKommuner, datoDag, datoMåned);
 
 		beregnetPris.setText(pris);
-		System.out.println(pris);
 	}
 
+	public void ting(){
+		besked("Pris er ved at blive fundet");
+	}
+	
 	public void prisUdregning() {
-		TrådePrøver tp = new TrådePrøver();
-		tp.start(null);
-		
 		int personerItal = Integer.parseInt(antalPersoner.getText());
 
 		this.datoDag = dagDato.getText();
@@ -196,7 +196,7 @@ public class Funktioner_BrugerController implements Initializable {
 		this.slutKommuner = slutKommune.getText();
 		this.personer = antalPersoner.getText();
 
-		besked("Pris er ved at blive fundet");
+		
 
 		if (dagDato.getText().isEmpty() || månedDato.getText().isEmpty() || startVejOgNr.getText().isEmpty()
 				|| startBy.getText().isEmpty() || startPostnr.getText().isEmpty() || startKommune.getText().isEmpty()
@@ -212,6 +212,7 @@ public class Funktioner_BrugerController implements Initializable {
 				findPris();
 				
 				bestil.setDisable(false);
+				besked("Pris fundet");
 
 			} else {
 				besked("Person antal skal være under 5");
