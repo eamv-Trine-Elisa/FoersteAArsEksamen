@@ -32,7 +32,7 @@ public class CSV {
 			FileWriter writer = new FileWriter("C:\\opt\\test.csv");
 			System.out.println(resultatListe.size());
 			for (int j = 0; j < 2 ; j++) { // resultatListe.size() - laver alt for mange
-				
+		//Det er antallet af bestilID den skal lave den lang ting ting ting 
 				writer.write("Bestil ID");
 				writer.write(";");
 				writer.write("Start Vej og nr");

@@ -1,6 +1,5 @@
 package logik;
 
-import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.Random;
 

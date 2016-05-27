@@ -34,7 +34,8 @@ public class FindOplysningerFraBestilID {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		
+		System.out.println(resultater);
 		return resultater;
 	}
 }
