@@ -2,6 +2,7 @@ package logik;
 
 import java.util.ArrayList;
 
+import javafx.scene.control.MenuItem;
 import sats.Sats;
 
 public class MainTestTing {
@@ -30,10 +31,13 @@ public class MainTestTing {
 		tii = sats.getKommuner();
 		
 		for (int i = 0; i < tii.length; i++) {
-			System.out.println(" <MenuItem mnemonicParsing=false onAction=#tekstTilKommuneMenu text=" + tii[i] +" />");
-			
-			
-			
+//			System.out.println("@FXML");
+//			System.out.println("private MenuItem slut"+tii[i]+";");
+//			System.out.println("public void menuTekstTil"+tii[i]+"Slut() {");
+//			System.out.println("String menuItem = slut"+tii[i]+".getText();");
+//			System.out.println("slutKommune.setText(menuItem);}\n");
+
+			System.out.println(tii[i]);
 		}
 
 	}

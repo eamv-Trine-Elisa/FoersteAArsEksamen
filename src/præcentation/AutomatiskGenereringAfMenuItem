@@ -1,0 +1,16 @@
+
+
+
+	public void initialize(URL location, ResourceBundle resources) {
+	//	kommuneMenuting();
+
+	}
+
+
+
+metode: kommuneMenuTing
+Sats sats = Sats.i();
+
+for (int i = 0; i < sats.getKommuner().length; i++) {
+	slutKommune.getItems().addAll(FXCollections.observableArrayList(new CheckMenuItem(sats.getKommuner()[i])));
+}

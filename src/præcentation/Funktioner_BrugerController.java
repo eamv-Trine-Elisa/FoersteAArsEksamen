@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
+
 import data.CSV;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -98,8 +100,6 @@ public class Funktioner_BrugerController implements Initializable {
 	private Button bestil;
 	@FXML
 	private Button udregnPris;
-	@FXML
-	private ProgressBar vente;
 
 	@FXML
 	private MenuItem opretHistorik;
@@ -107,20 +107,8 @@ public class Funktioner_BrugerController implements Initializable {
 	@FXML
 	private Label bestilBesked;
 
-	@FXML
-	private MenuItem startHerning;
-	@FXML
-	private MenuItem startHolstebro;
-	@FXML
-	private MenuItem slutHerning;
-	@FXML
-	private MenuItem slutHolstebro;
-
-	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		/* kommuneMenuting(); */
-		// Bruges til aftomatisk at lave menu items fra flemmings array
 
 	}
 
@@ -149,7 +137,7 @@ public class Funktioner_BrugerController implements Initializable {
 			this.afGang_anKomst = ankomst.getText();
 		}
 
-		bestilling();
+		 bestilling();
 
 		if (beskedIkkebesked == true) {
 			besked("Bestillling gennemført");
@@ -165,8 +153,8 @@ public class Funktioner_BrugerController implements Initializable {
 	}
 
 	public void lavHistorik() {
-			mfts.lavCSVfil(kundenr.getText());
-			besked("CSV fil oprettet");
+		mfts.lavCSVfil(kundenr.getText());
+		besked("CSV fil oprettet");
 	}
 
 	public void findPris() {
@@ -176,10 +164,10 @@ public class Funktioner_BrugerController implements Initializable {
 		beregnetPris.setText(pris);
 	}
 
-	public void ting(){
+	public void beskedNårPrisFindes() {
 		besked("Pris er ved at blive fundet");
 	}
-	
+
 	public void prisUdregning() {
 		int personerItal = Integer.parseInt(antalPersoner.getText());
 
@@ -195,8 +183,6 @@ public class Funktioner_BrugerController implements Initializable {
 		this.slutKommuner = slutKommune.getText();
 		this.personer = antalPersoner.getText();
 
-		
-
 		if (dagDato.getText().isEmpty() || månedDato.getText().isEmpty() || startVejOgNr.getText().isEmpty()
 				|| startBy.getText().isEmpty() || startPostnr.getText().isEmpty() || startKommune.getText().isEmpty()
 				|| slutVejOgNr.getText().isEmpty() || slutBy.getText().isEmpty() || slutPostnr.getText().isEmpty()
@@ -209,7 +195,7 @@ public class Funktioner_BrugerController implements Initializable {
 			if (personerItal > 0 && personerItal < 6) {
 
 				findPris();
-				
+
 				bestil.setDisable(false);
 				besked("Pris fundet");
 
@@ -219,34 +205,318 @@ public class Funktioner_BrugerController implements Initializable {
 		}
 	}
 
-	/*
-	 * public void kommuneMenuting() { //Bruges til aftomatisk at lave menuItem
-	 * Sats sats = Sats.i();
-	 * 
-	 * for (int i = 0; i < sats.getKommuner().length; i++) {
-	 * 
-	 * slutKommune.getItems().addAll(FXCollections.observableArrayList(new
-	 * MenuItem(sats.getKommuner()[i]))); } }
-	 */
+	public void besked(String besked) {
+		bestilBesked.setText(besked);
+	}
 
-	public void menuTekstTilHerningstart() {
+	
+	
+	// Det der kommer ned af, er de kommuner man kan vælge for at få en pris...
+	@FXML
+	private MenuItem startAarhus;
 
-		String menuItem;
-		menuItem = startHerning.getText();
-
+	public void menuTekstTilAarhusStart() {
+		String menuItem = startAarhus.getText();
 		startKommune.setText(menuItem);
 	}
 
-	public void menuTekstTilHolstebroslut() {
+	@FXML
+	private MenuItem startFavrskov;
 
-		String menuItem;
-		menuItem = slutHolstebro.getText();
+	public void menuTekstTilFavrskovStart() {
+		String menuItem = startFavrskov.getText();
+		startKommune.setText(menuItem);
+	}
 
+	@FXML
+	private MenuItem startHedensted;
+
+	public void menuTekstTilHedenstedStart() {
+		String menuItem = startHedensted.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem startHerning;
+
+	public void menuTekstTilHerningStart() {
+		String menuItem = startHerning.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem startHolstebro;
+
+	public void menuTekstTilHolstebroStart() {
+		String menuItem = startHolstebro.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem startHorsens;
+
+	public void menuTekstTilHorsensStart() {
+		String menuItem = startHorsens.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem startIkast_Brande;
+
+	public void menuTekstTilIkast_BrandeStart() {
+		String menuItem = startIkast_Brande.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem startLemvig;
+
+	public void menuTekstTilLemvigStart() {
+		String menuItem = startLemvig.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem startNorddjurs;
+
+	public void menuTekstTilNorddjursStart() {
+		String menuItem = startNorddjurs.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem startOdder;
+
+	public void menuTekstTilOdderStart() {
+		String menuItem = startOdder.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem startRanders;
+
+	public void menuTekstTilRandersStart() {
+		String menuItem = startRanders.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem startRingkøbing_Skjern;
+
+	public void menuTekstTilRingkøbing_SkjernStart() {
+		String menuItem = startRingkøbing_Skjern.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem startSamsø;
+
+	public void menuTekstTilSamsøStart() {
+		String menuItem = startSamsø.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem startSilkeborg;
+
+	public void menuTekstTilSilkeborgStart() {
+		String menuItem = startSilkeborg.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem startSkanderborg;
+
+	public void menuTekstTilSkanderborgStart() {
+		String menuItem = startSkanderborg.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem startSkive;
+
+	public void menuTekstTilSkiveStart() {
+		String menuItem = startSkive.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem startStruer;
+
+	public void menuTekstTilStruerStart() {
+		String menuItem = startStruer.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem startSyddjurs;
+
+	public void menuTekstTilSyddjursStart() {
+		String menuItem = startSyddjurs.getText();
+		startKommune.setText(menuItem);
+	}
+
+	
+	//Slut Kommunerne begynder
+	
+	@FXML
+	private MenuItem startViborg;
+
+	public void menuTekstTilViborgStart() {
+		String menuItem = startViborg.getText();
+		startKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutAarhus;
+
+	public void menuTekstTilAarhusSlut() {
+		String menuItem = slutAarhus.getText();
 		slutKommune.setText(menuItem);
 	}
 
-	public void besked(String besked) {
-		bestilBesked.setText(besked);
+	@FXML
+	private MenuItem slutFavrskov;
+
+	public void menuTekstTilFavrskovSlut() {
+		String menuItem = slutFavrskov.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutHedensted;
+
+	public void menuTekstTilHedenstedSlut() {
+		String menuItem = slutHedensted.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutHerning;
+
+	public void menuTekstTilHerningSlut() {
+		String menuItem = slutHerning.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutHolstebro;
+
+	public void menuTekstTilHolstebroSlut() {
+		String menuItem = slutHolstebro.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutHorsens;
+
+	public void menuTekstTilHorsensSlut() {
+		String menuItem = slutHorsens.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutIkast_Brande;
+
+	public void menuTekstTilIkast_BrandeSlut() {
+		String menuItem = slutIkast_Brande.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutLemvig;
+
+	public void menuTekstTilLemvigSlut() {
+		String menuItem = slutLemvig.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutNorddjurs;
+
+	public void menuTekstTilNorddjursSlut() {
+		String menuItem = slutNorddjurs.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutOdder;
+
+	public void menuTekstTilOdderSlut() {
+		String menuItem = slutOdder.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutRanders;
+
+	public void menuTekstTilRandersSlut() {
+		String menuItem = slutRanders.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutRingkøbing_Skjern;
+
+	public void menuTekstTilRingkøbing_SkjernSlut() {
+		String menuItem = slutRingkøbing_Skjern.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutSamsø;
+
+	public void menuTekstTilSamsøSlut() {
+		String menuItem = slutSamsø.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutSilkeborg;
+
+	public void menuTekstTilSilkeborgSlut() {
+		String menuItem = slutSilkeborg.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutSkanderborg;
+
+	public void menuTekstTilSkanderborgSlut() {
+		String menuItem = slutSkanderborg.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutSkive;
+
+	public void menuTekstTilSkiveSlut() {
+		String menuItem = slutSkive.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutStruer;
+
+	public void menuTekstTilStruerSlut() {
+		String menuItem = slutStruer.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutSyddjurs;
+
+	public void menuTekstTilSyddjursSlut() {
+		String menuItem = slutSyddjurs.getText();
+		slutKommune.setText(menuItem);
+	}
+
+	@FXML
+	private MenuItem slutViborg;
+
+	public void menuTekstTilViborgSlut() {
+		String menuItem = slutViborg.getText();
+		slutKommune.setText(menuItem);
 	}
 
 }

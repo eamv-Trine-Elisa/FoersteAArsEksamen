@@ -85,15 +85,50 @@
       <Label fx:id="bestilBesked" alignment="CENTER" layoutX="25.0" layoutY="693.0" prefHeight="21.0" prefWidth="388.0" text="." />
       <MenuButton fx:id="startKommune" layoutX="22.0" layoutY="383.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="187.0" text="Kommune">
          <items>
-            <MenuItem fx:id="startHerning" mnemonicParsing="false" onAction="#menuTekstTilHerningstart" text="Herning" />
-            <MenuItem fx:id="startHolstebro" mnemonicParsing="false" text="Holstebro" />
+            <MenuItem fx:id="startAarhus" mnemonicParsing="false" onAction="#menuTekstTilAarhusStart" text="Aarhus" />
+            <MenuItem fx:id="startFavrskov" mnemonicParsing="false" onAction="#menuTekstTilFavrskovStart" text="Favrskov" />
+            <MenuItem fx:id="startHedensted" mnemonicParsing="false" onAction="#menuTekstTilHedenstedStart" text="Hedensted" />
+            <MenuItem fx:id="startHerning" mnemonicParsing="false" onAction="#menuTekstTilHerningStart" text="Herning" />
+            <MenuItem fx:id="startHolstebro" mnemonicParsing="false" onAction="#menuTekstTilHolstebroStart" text="Holstebro" />
+            <MenuItem fx:id="startHorsens" mnemonicParsing="false" onAction="#menuTekstTilHorsensStart" text="Horsens" />
+            <MenuItem fx:id="startIkast_Brande" mnemonicParsing="false" onAction="#menuTekstTilIkast_BrandeStart" text="Ikast/Brande" />
+            <MenuItem fx:id="startLemvig" mnemonicParsing="false" onAction="#menuTekstTilLemvigStart" text="Lemvig" />
+            <MenuItem fx:id="startNorddjurs" mnemonicParsing="false" onAction="#menuTekstTilNorddjursStart" text="Norddjurs" />
+            <MenuItem fx:id="startOdder" mnemonicParsing="false" onAction="#menuTekstTilOdderStart" text="Odder" />
+            <MenuItem fx:id="startRanders" mnemonicParsing="false" onAction="#menuTekstTilRandersStart" text="Randers" />
+            <MenuItem fx:id="startRingkøbing_Skjern" mnemonicParsing="false" onAction="#menuTekstTilRingkøbing_SkjernStart" text="Ringkøbing/Skjern" />
+            <MenuItem fx:id="startSamsø" mnemonicParsing="false" onAction="#menuTekstTilSamsøStart" text="Samsø" />
+            <MenuItem fx:id="startSilkeborg" mnemonicParsing="false" onAction="#menuTekstTilSilkeborgStart" text="Silkeborg" />
+            <MenuItem fx:id="startSkanderborg" mnemonicParsing="false" onAction="#menuTekstTilSkanderborgStart" text="Skanderborg" />
+            <MenuItem fx:id="startSkive" mnemonicParsing="false" onAction="#menuTekstTilSkiveStart" text="Skrive" />
+            <MenuItem fx:id="startStruer" mnemonicParsing="false" onAction="#menuTekstTilStruerStart" text="Struer" />
+            <MenuItem fx:id="startSyddjurs" mnemonicParsing="false" onAction="#menuTekstTilSyddjursStart" text="Syddjurs" />
+            <MenuItem fx:id="startViborg" mnemonicParsing="false" onAction="#menuTekstTilViborgStart" text="Viborg" />
          </items>
       </MenuButton>
       <MenuButton fx:id="slutKommune" layoutX="225.0" layoutY="383.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="187.0" text="Kommune">
          <items>
-            <MenuItem fx:id="slutHerning" mnemonicParsing="false" text="Herning" />
-            <MenuItem fx:id="slutHolstebro" mnemonicParsing="false" onAction="#menuTekstTilHolstebroslut" text="Holstebro" />
-         </items></MenuButton>
-      <Button fx:id="udregnPris" layoutX="176.0" layoutY="641.0" mnemonicParsing="false" onAction="#prisUdregning" onMousePressed="#ting" text="Udregn pris" />
+            <MenuItem fx:id="slutAarhus" mnemonicParsing="false" onAction="#menuTekstTilAarhusSlut" text="Aarhus" />
+            <MenuItem fx:id="slutFavrskov" mnemonicParsing="false" onAction="#menuTekstTilFavrskovSlut" text="Favrskov" />
+            <MenuItem fx:id="slutHedensted" mnemonicParsing="false" onAction="#menuTekstTilHedenstedSlut" text="Hedensted" />
+            <MenuItem fx:id="slutHerning" mnemonicParsing="false" onAction="#menuTekstTilHerningSlut" text="Herning" />
+            <MenuItem fx:id="slutHolstebro" mnemonicParsing="false" onAction="#menuTekstTilHolstebroSlut" text="Holstebro" />
+            <MenuItem fx:id="slutHorsens" mnemonicParsing="false" onAction="#menuTekstTilHorsensSlut" text="Horsens" />
+            <MenuItem fx:id="slutIkast_Brande" mnemonicParsing="false" onAction="#menuTekstTilIkast_BrandeSlut" text="Ikast/Brande" />
+            <MenuItem fx:id="slutLemvig" mnemonicParsing="false" onAction="#menuTekstTilLemvigSlut" text="Lemvig" />
+            <MenuItem fx:id="slutNorddjurs" mnemonicParsing="false" onAction="#menuTekstTilNorddjursSlut" text="Norddjurs" />
+            <MenuItem fx:id="slutOdder" mnemonicParsing="false" onAction="#menuTekstTilOdderSlut" text="Odder" />
+            <MenuItem fx:id="slutRanders" mnemonicParsing="false" onAction="#menuTekstTilRandersSlut" text="Randers" />
+            <MenuItem fx:id="slutRingkøbing_Skjern" mnemonicParsing="false" onAction="#menuTekstTilRingkøbing_SkjernSlut" text="Ringkøbing/Skjern" />
+            <MenuItem fx:id="slutSamsø" mnemonicParsing="false" onAction="#menuTekstTilSamsøSlut" text="Samsø" />
+            <MenuItem fx:id="slutSilkeborg" mnemonicParsing="false" onAction="#menuTekstTilSilkeborgSlut" text="Silkeborg" />
+            <MenuItem fx:id="slutSkanderborg" mnemonicParsing="false" onAction="#menuTekstTilSkanderborgSlut" text="Skanderborg" />
+            <MenuItem fx:id="slutSkive" mnemonicParsing="false" onAction="#menuTekstTilSkiveSlut" text="Skrive" />
+            <MenuItem fx:id="slutStruer" mnemonicParsing="false" onAction="#menuTekstTilStruerSlut" text="Struer" />
+            <MenuItem fx:id="slutSyddjurs" mnemonicParsing="false" onAction="#menuTekstTilSyddjursSlut" text="Syddjurs" />
+            <MenuItem fx:id="slutViborg" mnemonicParsing="false" onAction="#menuTekstTilViborgSlut" text="Viborg" />
+         </items>
+      </MenuButton>
+      <Button fx:id="udregnPris" layoutX="176.0" layoutY="641.0" mnemonicParsing="false" onAction="#prisUdregning" onMousePressed="#beskedNårPrisFindes" text="Udregn pris" />
    </children>
 </AnchorPane>
