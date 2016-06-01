@@ -8,23 +8,25 @@ import java.util.ArrayList;
 public class FindOplysningerFraBestilID {
 
 	private ArrayList<String> resultater = new ArrayList<>();
-	private ResultSet resultset = null;
+	private ResultSet resultset1 = null;
+	private ResultSet resultset2 = null;
+	private ResultSet resultset3 = null;
 
 	
 	public ArrayList<String> bestillingAdresseOplysninger(int bestilID) {
 
 		try {
 			DataAcess da = DataAcess.getInstance();
-			resultset = da.bestillingsOplysninger("Bestilling_Adresse", bestilID);
+			resultset1 = da.bestillingsOplysninger("Bestilling_Adresse", bestilID);
 
-			while (resultset.next()) {
-				ResultSetMetaData metadata = resultset.getMetaData();
+			while (resultset1.next()) {
+				ResultSetMetaData metadata = resultset1.getMetaData();
 				int numberOfColumns = metadata.getColumnCount();
 
 				int i = 1;
 				while (i <= numberOfColumns) {
 
-					resultater.add(resultset.getString(i));
+					resultater.add(resultset1.getString(i));
 					
 				i++;
 				}
@@ -42,16 +44,16 @@ public class FindOplysningerFraBestilID {
 
 		try {
 			DataAcess da = DataAcess.getInstance();
-			resultset = da.bestillingsOplysninger("Bestilling_Tid", bestilID);
+			resultset2 = da.bestillingsOplysninger("Bestilling_Tid", bestilID);
 
-			while (resultset.next()) {
-				ResultSetMetaData metadata = resultset.getMetaData();
+			while (resultset2.next()) {
+				ResultSetMetaData metadata = resultset2.getMetaData();
 				int numberOfColumns = metadata.getColumnCount();
 
 				int i = 1;
 				while (i <= numberOfColumns) {
 
-					resultater.add(resultset.getString(i));
+					resultater.add(resultset2.getString(i));
 					
 				i++;
 				}
@@ -69,16 +71,16 @@ public class FindOplysningerFraBestilID {
 
 		try {
 			DataAcess da = DataAcess.getInstance();
-			resultset = da.bestillingsOplysninger("Bestilling_PHB", bestilID);
+			resultset3 = da.bestillingsOplysninger("Bestilling_PHB", bestilID);
 
-			while (resultset.next()) {
-				ResultSetMetaData metadata = resultset.getMetaData();
+			while (resultset3.next()) {
+				ResultSetMetaData metadata = resultset3.getMetaData();
 				int numberOfColumns = metadata.getColumnCount();
 
 				int i = 1;
 				while (i <= numberOfColumns) {
 
-					resultater.add(resultset.getString(i));
+					resultater.add(resultset3.getString(i));
 					
 				i++;
 				}
