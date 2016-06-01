@@ -1,6 +1,5 @@
 package data;
 
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,8 +7,7 @@ import java.util.ArrayList;
 import javax.sound.midi.Synthesizer;
 
 public class CSV {
-	
-	
+
 	// Creating a singleton class.
 	private static CSV instance = null;
 
@@ -23,16 +21,17 @@ public class CSV {
 		}
 		return instance;
 	}
-	
-	
-	public void lavCSVfil(ArrayList<String> resultatListe){		
-	
+
+	public void lavCSVfil(ArrayList<String> resultatListe) {
+
 		try {
-			
+
 			FileWriter writer = new FileWriter("C:\\temp\\Historik.csv");
 
-			for (int j = 0; j < 2 ; j++) { // resultatListe.size() - laver alt for mange
-		//Det er antallet af bestilID den skal lave den lang ting ting ting 
+			for (int j = 0; j < 2; j++) { // resultatListe.size() - laver alt
+											// for mange
+				// Det er antallet af bestilID den skal lave den lang ting ting
+				// ting
 				writer.write("Bestil ID");
 				writer.write(";");
 				writer.write("Start Vej og nr");
@@ -52,23 +51,23 @@ public class CSV {
 				writer.write("Slut Kommune");
 				writer.write(";");
 			}
-			
+
 			writer.write('\n');
-			
-				for (int i = 0; i < resultatListe.size(); i++) {
-					writer.append(resultatListe.get(i));
-					writer.write(";");
-				}
 
-				writer.write("\n");			
+			for (int i = 0; i < resultatListe.size(); i++) {
+				writer.append(resultatListe.get(i));
+				writer.write(";");
+			}
 
-				writer.close();
-			
+			writer.write("\n");
+
+			writer.close();
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }

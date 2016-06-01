@@ -16,13 +16,10 @@ public class HåndteringAFSamleTilCSV {
 
 		overføre.addAll(fbIDfk.findeBestilIDfraKundenr(kundenr));
 		
-		
-		
-		
-
 		for (int i = 0; i < overføre.size(); i++) {
 
-			bestilID = Integer.parseInt(fbIDfk.findeBestilIDfraKundenr(kundenr).get(i));
+			//bestilID = Integer.parseInt(fbIDfk.findeBestilIDfraKundenr(kundenr).get(i));
+			bestilID = Integer.parseInt(overføre.get(i));
 			samledeOplysninger.addAll(fofb.bestillingPHBOplysninger(bestilID));
 			samledeOplysninger.addAll(fofb.bestillingTidOplysninger(bestilID));
 			samledeOplysninger.addAll(fofb.bestillingAdresseOplysninger(bestilID));
