@@ -8,19 +8,19 @@ import javax.sound.midi.Synthesizer;
 
 public class CSV {
 
-	// Creating a singleton class.
-	private static CSV instance = null;
-
-	private CSV() {
-		// Exists only to defeat instantiation.
-	}
-
-	public static CSV getInstance() {
-		if (instance == null) {
-			instance = new CSV();
-		}
-		return instance;
-	}
+//	// Creating a singleton class.
+//	private static CSV instance = null;
+//
+//	private CSV() {
+//		// Exists only to defeat instantiation.
+//	}
+//
+//	public static CSV getInstance() {
+//		if (instance == null) {
+//			instance = new CSV();
+//		}
+//		return instance;
+//	}
 
 	public void lavCSVfil(ArrayList<String> resultatListe) {
 

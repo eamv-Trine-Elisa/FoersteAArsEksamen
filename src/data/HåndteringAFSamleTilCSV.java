@@ -12,7 +12,8 @@ public class HåndteringAFSamleTilCSV {
 
 		FindBestilIDFraKundenr fbIDfk = new FindBestilIDFraKundenr();
 		FindOplysningerFraBestilID fofb = new FindOplysningerFraBestilID();
-		CSV csv = CSV.getInstance();
+		//CSV csv = CSV.getInstance();
+		CSV csv = new CSV();
 
 		overføre.addAll(fbIDfk.findeBestilIDfraKundenr(kundenr));
 		
@@ -23,9 +24,9 @@ public class HåndteringAFSamleTilCSV {
 			samledeOplysninger.addAll(fofb.bestillingTidOplysninger(bestilID));
 			samledeOplysninger.addAll(fofb.bestillingAdresseOplysninger(bestilID));
 
-			csv.lavCSVfil(samledeOplysninger);
+			
 		}
-		
+		csv.lavCSVfil(samledeOplysninger);
 
 	}
 }
