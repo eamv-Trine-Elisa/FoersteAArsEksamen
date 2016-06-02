@@ -26,7 +26,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="309.0" layoutX="13.0" layoutY="148.0" stroke="BLACK" strokeType="INSIDE" width="412.0" />
       <ImageView fitHeight="31.0" fitWidth="200.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Dropbox/EAMV/Trine%20og%20Elisa/Førsteårs%20projekt/Iteration%203/Implementation/logo.png" />
+            <Image url="@logo.png" />
          </image>
       </ImageView>
       <Text layoutX="91.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Du er logget ind som" wrappingWidth="283.18359375">
