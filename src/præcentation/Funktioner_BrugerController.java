@@ -201,6 +201,7 @@ public class Funktioner_BrugerController implements Initializable {
 
 			} else {
 				besked("Person antal skal være under 5");
+				bestil.setDisable(true);
 			}
 		}
 	}
